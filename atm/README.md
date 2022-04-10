@@ -6,4 +6,4 @@ The goal of this reverse task was to understand the c++ source code. We need to 
 
 [solution script](atm.py)
 
-Flag: `maybe later. have not saved, sorry`
+Flag: `Ararat{cAlM_D0wn_4nd_T4ke_yOur_mOney}`
