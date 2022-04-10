@@ -1,6 +1,6 @@
 # Kazino writeup
 
-Given: (vuln)[vuln] and (libc.so.6)[libccc]
+Given: vuln and (libc.so.6)libccc
 
 Executable have three functions:
 1. to increase win counter if `rand()` returns 0 or to exit program otherwise.  
