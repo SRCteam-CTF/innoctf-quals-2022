@@ -1,0 +1,7 @@
+# Armenian ATM writeup
+
+The goal of this reverse task was to understand the c++ source code. We need to bypass `Dispenser` boolean flag check and password check. To bypass boolean flag check we need to pull all banknotes from the dispenser and push them back. To bypass password check we need to generate the same password using the same [generator](atm.cpp) as in `ATM::ATM` that is based on `stand(time(0))`, so it's simple to attack generator.
+
+[solution script](atm.py)
+
+Flag: `maybe later. have not saved, sorry`
